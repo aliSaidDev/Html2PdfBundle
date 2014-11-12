@@ -37,10 +37,10 @@ class PdfGenerator{
 	    }
 	}
 
-	public function outputPdf($content, array $options = array()){
-		$html2pdf = $this->getGeneratedPdf($content, $options);
-		$html2pdf->Output('');
-	}
+	public function outputPdf($content, $fileName = "", $destination = "I", array $options = array()) {
+        	$html2pdf = $this->getGeneratedPdf($content, $options);
+        	$html2pdf->Output($fileName, $destination);
+    	}
 
 	protected function createPdf($content){
 		// replace the <html> tags by <page> tags
